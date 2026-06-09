@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ram K – Resume | Data Analyst</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f4f6f9;
+      color: #1a1a2e;
+      line-height: 1.6;
+    }
+    /* ── TOP NAV ── */
+    .nav {
+      background: #0d1117;
+      padding: 14px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-brand { color: #58a6ff; font-weight: 700; font-size: 1.1rem; text-decoration: none; }
+    .nav-links a {
+      color: #c9d1d9;
+      text-decoration: none;
+      margin-left: 24px;
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: #58a6ff; }
+    .nav-links a.active { color: #58a6ff; font-weight: 600; }
+
+    /* ── PAGE WRAPPER ── */
+    .page { max-width: 900px; margin: 40px auto; padding: 0 20px 60px; }
+
+    /* ── HEADER CARD ── */
+    .resume-header {
+      background: linear-gradient(135deg, #0d1117 0%, #161b22 100%);
+      color: #fff;
+      border-radius: 12px;
+      padding: 40px 48px;
+      margin-bottom: 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .resume-header h1 { font-size: 2rem; font-weight: 800; color: #fff; margin-bottom: 6px; }
+    .resume-header .title { color: #58a6ff; font-size: 1.05rem; font-weight: 600; margin-bottom: 12px; }
+    .resume-header .contact { font-size: 0.85rem; color: #8b949e; line-height: 1.9; }
+    .resume-header .contact a { color: #58a6ff; text-decoration: none; }
+    .print-btn {
+      background: #238636;
+      color: #fff;
+      border: none;
+      padding: 10px 22px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .print-btn:hover { background: #2ea043; }
+
+    /* ── SECTION CARD ── */
+    .section {
+      background: #fff;
+      border-radius: 10px;
+      padding: 28px 36px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    }
+    .section-title {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #58a6ff;
+      border-bottom: 2px solid #e8f0fe;
+      padding-bottom: 8px;
+      margin-bottom: 20px;
+    }
+
+    /* ── EXPERIENCE / EDUCATION ITEMS ── */
+    .item { margin-bottom: 24px; }
+    .item:last-child { margin-bottom: 0; }
+    .item-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 4px; margin-bottom: 4px; }
+    .item-title { font-weight: 700; font-size: 1rem; color: #0d1117; }
+    .item-company { font-weight: 600; font-size: 0.9rem; color: #238636; margin-bottom: 2px; }
+    .item-date { font-size: 0.8rem; color: #8b949e; font-style: italic; white-space: nowrap; }
+    .item-location { font-size: 0.8rem; color: #8b949e; margin-bottom: 10px; }
+    .item-bullets { list-style: none; padding: 0; }
+    .item-bullets li {
+      font-size: 0.88rem;
+      color: #444;
+      padding: 3px 0 3px 16px;
+      position: relative;
+    }
+    .item-bullets li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: #58a6ff;
+      font-size: 0.75rem;
+      top: 5px;
+    }
+    .item-tags { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 6px; }
+    .tag {
+      background: #e8f0fe;
+      color: #1a56db;
+      font-size: 0.72rem;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-weight: 600;
+    }
+    .divider { border: none; border-top: 1px solid #f0f0f0; margin: 20px 0; }
+
+    /* ── SKILLS GRID ── */
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 14px; }
+    .skill-group h4 { font-size: 0.78rem; font-weight: 700; color: #0d1117; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+    .skill-group .skill-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .skill-tag {
+      background: #f0fdf4;
+      color: #166534;
+      font-size: 0.75rem;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-weight: 600;
+      border: 1px solid #bbf7d0;
+    }
+
+    /* ── EDUCATION GRID ── */
+    .edu-degree { font-size: 0.8rem; color: #555; margin-top: 2px; }
+    .edu-gpa { font-size: 0.78rem; color: #238636; font-weight: 600; margin-top: 3px; }
+
+    /* ── SUMMARY ── */
+    .summary-text { font-size: 0.92rem; color: #444; line-height: 1.75; }
+
+    /* ── PRINT ── */
+    @media print {
+      .nav, .print-btn { display: none !important; }
+      body { background: #fff; }
+      .page { margin: 0; padding: 0 10px; }
+      .section { box-shadow: none; border: 1px solid #eee; }
+    }
+
+    @media (max-width: 600px) {
+      .resume-header { padding: 28px 24px; }
+      .section { padding: 20px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a class="nav-brand" href="index.html">Ram K | Portfolio</a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="index.html#projects">Projects</a>
+    <a href="resume.html" class="active">Resume</a>
+  </div>
+</nav>
+
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="resume-header">
+    <div>
+      <h1>Ram K</h1>
+      <div class="title">Data Analyst &nbsp;|&nbsp; SQL &middot; Python &middot; Power BI &middot; Tableau</div>
+      <div class="contact">
+        Philadelphia, Pennsylvania, United States &nbsp;&middot;&nbsp; Remote / Hybrid / On-site<br/>
+        <a href="mailto:ramkoduru08@gmail.com">ramkoduru08@gmail.com</a> &nbsp;&middot;&nbsp;
+        <a href="https://www.linkedin.com/in/ramkoduru08/" target="_blank">linkedin.com/in/ramkoduru08</a> &nbsp;&middot;&nbsp;
+        <a href="https://ramkoduru08.github.io/data-analytics-portfolio/" target="_blank">Portfolio</a>
+      </div>
+    </div>
+    <button class="print-btn" onclick="window.print()">&#128438; Print / Save PDF</button>
+  </div>
+
+  <!-- SUMMARY -->
+  <div class="section">
+    <div class="section-title">Professional Summary</div>
+    <p class="summary-text">
+      Data Analyst with 3+ years of experience turning messy, siloed data into clean pipelines and dashboards that leadership actually uses.
+      Skilled in SQL (MS SQL Server, PostgreSQL, BigQuery), Python (Pandas), Power BI (PL-300 Certified), and Tableau (Desktop Specialist).
+      Proven track record: surfaced $2M+ in budget overruns, cut reporting time by 50%, and improved data accuracy by 35% across integrated business systems.
+      MS in Information Systems (GPA 3.7) from Wilmington University. Open to Data Analyst, BI Analyst, and Analytics Engineer roles — remote, hybrid, or Philadelphia-based.
+    </p>
+  </div>
+
+  <!-- EXPERIENCE -->
+  <div class="section">
+    <div class="section-title">Experience</div>
+
+    <div class="item">
+      <div class="item-header">
+        <div>
+          <div class="item-title">Data Analyst</div>
+          <div class="item-company">Perfect Solutions Group &nbsp;&middot;&nbsp; Full-time</div>
+          <div class="item-location">Texas, United States &middot; Remote</div>
+        </div>
+        <div class="item-date">Dec 2025 – Present</div>
+      </div>
+      <ul class="item-bullets">
+        <li>Cut manual data preparation time by 50% across 5+ integrated business systems by building SQL-based automated workflows in MS SQL Server.</li>
+        <li>Eliminated 3 hours of daily manual reporting for operations, finance, and product teams by automating recurring workflows using Python (Pandas) and SQL.</li>
+        <li>Improved data accuracy to stakeholders by 35% by building automated validation checks that catch schema mismatches and null anomalies before data reaches a dashboard.</li>
+        <li>Delivered 10+ executive KPI dashboards in Power BI and Tableau, translating ambiguous leadership requirements into structured, recurring reports used in weekly senior management reviews.</li>
+        <li>Surfaced real-time pricing trends from transactional datasets through ad hoc analysis, directly informing resource allocation decisions across two business units.</li>
+      </ul>
+      <div class="item-tags">
+        <span class="tag">MS SQL Server</span><span class="tag">Python (Pandas)</span><span class="tag">Power BI</span>
+        <span class="tag">Tableau</span><span class="tag">Data Validation</span><span class="tag">KPI Dashboards</span>
+      </div>
+    </div>
+
+    <hr class="divider"/>
+
+    <div class="item">
+      <div class="item-header">
+        <div>
+          <div class="item-title">Junior Data Analyst</div>
+          <div class="item-company">Hai Robotics &nbsp;&middot;&nbsp; Internship</div>
+          <div class="item-location">Georgia, United States &middot; Remote</div>
+        </div>
+        <div class="item-date">Feb 2025 – Nov 2025</div>
+      </div>
+      <ul class="item-bullets">
+        <li>Replaced static Excel-based performance tracking with 4+ interactive KPI dashboards in Power BI and Tableau, giving cross-functional stakeholders real-time visibility into operational metrics.</li>
+        <li>Cut weekly reporting time by 40% by automating data collection and transformation workflows in Python and SQL, reducing per-report effort from hours to minutes.</li>
+        <li>Resolved recurring data integrity issues across large operational datasets by implementing systematic quality checks during exploratory analysis.</li>
+        <li>Accelerated dashboard delivery by partnering with 3 cross-functional teams to translate business requirements directly into dashboard specifications.</li>
+      </ul>
+      <div class="item-tags">
+        <span class="tag">SQL</span><span class="tag">Python</span><span class="tag">Power BI</span>
+        <span class="tag">Tableau</span><span class="tag">Data Visualization</span><span class="tag">EDA</span>
+      </div>
+    </div>
+
+    <hr class="divider"/>
+
+    <div class="item">
+      <div class="item-header">
+        <div>
+          <div class="item-title">Data Analyst (Site Engineering &amp; Analytics)</div>
+          <div class="item-company">Ram Krishi Infra Structures &nbsp;&middot;&nbsp; Full-time</div>
+          <div class="item-location">Bengaluru, Karnataka, India &middot; On-site</div>
+        </div>
+        <div class="item-date">Jun 2019 – Apr 2022</div>
+      </div>
+      <ul class="item-bullets">
+        <li>Surfaced $2M+ in previously undetected budget overruns across infrastructure projects by building cost-tracking workbooks in Advanced Excel that consolidated multi-source financial data.</li>
+        <li>Cut report generation time by 60% across 12+ construction sites by replacing manual tracking with structured Excel dashboards monitoring equipment performance and resource utilization.</li>
+        <li>Eliminated 4 hours/day of manual field data entry by designing Excel-based data management templates that enabled real-time construction reporting across all active site engineering operations.</li>
+        <li>Developed an Excel-based predictive tracking model using historical equipment data, projecting a 25% reduction in equipment costs over 12 months by flagging at-risk assets before failure.</li>
+        <li>Managed end-to-end project data management across multiple infrastructure sites using MS Project, tracking progress, resource allocation, and milestone delivery.</li>
+      </ul>
+      <div class="item-tags">
+        <span class="tag">Advanced Excel</span><span class="tag">MS Project</span><span class="tag">Data Analysis</span>
+        <span class="tag">Financial Reporting</span><span class="tag">AutoCAD</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- EDUCATION -->
+  <div class="section">
+    <div class="section-title">Education</div>
+
+    <div class="item">
+      <div class="item-header">
+        <div>
+          <div class="item-title">Master of Science – Information Systems</div>
+          <div class="item-company">Wilmington University</div>
+          <div class="edu-degree">Information System &amp; Web Development</div>
+          <div class="edu-gpa">GPA: 3.7 / 4.0</div>
+        </div>
+        <div class="item-date">Aug 2022 – Dec 2024</div>
+      </div>
+    </div>
+
+    <hr class="divider"/>
+
+    <div class="item">
+      <div class="item-header">
+        <div>
+          <div class="item-title">Bachelor of Engineering – Civil Engineering</div>
+          <div class="item-company">Jawaharlal Nehru Technological University</div>
+          <div class="edu-degree">Civil Engineering Technology</div>
+          <div class="edu-gpa">GPA: 3.8 / 4.0</div>
+        </div>
+        <div class="item-date">Jun 2015 – Apr 2019</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SKILLS -->
+  <div class="section">
+    <div class="section-title">Skills &amp; Technologies</div>
+    <div class="skills-grid">
+      <div class="skill-group">
+        <h4>Query &amp; Databases</h4>
+        <div class="skill-tags">
+          <span class="skill-tag">SQL</span>
+          <span class="skill-tag">MS SQL Server</span>
+          <span class="skill-tag">PostgreSQL</span>
+          <span class="skill-tag">Google BigQuery</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h4>Programming</h4>
+        <div class="skill-tags">
+          <span class="skill-tag">Python (Pandas)</span>
+          <span class="skill-tag">Data Wrangling</span>
+          <span class="skill-tag">Automation Scripts</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h4>BI &amp; Visualization</h4>
+        <div class="skill-tags">
+          <span class="skill-tag">Power BI</span>
+          <span class="skill-tag">Tableau</span>
+          <span class="skill-tag">Advanced Excel</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h4>Data Quality</h4>
+        <div class="skill-tags">
+          <span class="skill-tag">Data Validation</span>
+          <span class="skill-tag">Data Governance</span>
+          <span class="skill-tag">EDA</span>
+          <span class="skill-tag">Data Cleaning</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h4>Reporting</h4>
+        <div class="skill-tags">
+          <span class="skill-tag">KPI Dashboards</span>
+          <span class="skill-tag">Executive Reporting</span>
+          <span class="skill-tag">Stakeholder Presentations</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h4>Other Tools</h4>
+        <div class="skill-tags">
+          <span class="skill-tag">MS Project</span>
+          <span class="skill-tag">AutoCAD</span>
+          <span class="skill-tag">Agile</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CERTIFICATIONS -->
+  <div class="section">
+    <div class="section-title">Certifications</div>
+    <div class="item">
+      <div class="item-header">
+        <div>
+          <div class="item-title">Microsoft Power BI Data Analyst (PL-300)</div>
+          <div class="item-company">Microsoft</div>
+        </div>
+      </div>
+    </div>
+    <hr class="divider"/>
+    <div class="item">
+      <div class="item-header">
+        <div>
+          <div class="item-title">Tableau Desktop Specialist</div>
+          <div class="item-company">Tableau / Salesforce</div>
+        </div>
+      </div>
+    </div>
+    <hr class="divider"/>
+    <div class="item">
+      <div class="item-header">
+        <div>
+          <div class="item-title">Google Data Analytics Professional Certificate</div>
+          <div class="item-company">Google / Coursera</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
