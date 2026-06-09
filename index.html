@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ram K | Data Analytics Portfolio</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #0d1117; color: #c9d1d9; line-height: 1.7; }
+    a { color: #58a6ff; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    header { background: linear-gradient(135deg, #161b22 0%, #1f2937 100%); padding: 60px 20px 50px; text-align: center; border-bottom: 1px solid #30363d; }
+    header h1 { font-size: 2.8rem; color: #e6edf3; font-weight: 700; }
+    header h2 { font-size: 1.2rem; color: #58a6ff; margin: 10px 0 18px; font-weight: 400; }
+    header p { max-width: 680px; margin: 0 auto 24px; color: #8b949e; font-size: 1rem; }
+    .header-tags { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin-bottom: 28px; }
+    .tag { background: #21262d; border: 1px solid #30363d; color: #58a6ff; padding: 5px 14px; border-radius: 20px; font-size: 0.85rem; }
+    .cta-links { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
+    .btn { padding: 10px 22px; border-radius: 8px; font-size: 0.9rem; font-weight: 600; transition: 0.2s; }
+    .btn-primary { background: #238636; color: #fff; border: 1px solid #2ea043; }
+    .btn-primary:hover { background: #2ea043; text-decoration: none; }
+    .btn-secondary { background: transparent; color: #c9d1d9; border: 1px solid #30363d; }
+    .btn-secondary:hover { background: #21262d; text-decoration: none; }
+    section { max-width: 1000px; margin: 0 auto; padding: 60px 20px; }
+    .section-title { font-size: 1.6rem; color: #e6edf3; font-weight: 700; margin-bottom: 8px; padding-bottom: 12px; border-bottom: 1px solid #30363d; }
+    .section-subtitle { color: #8b949e; font-size: 0.95rem; margin-bottom: 36px; }
+    .stats { background: #161b22; border-top: 1px solid #30363d; border-bottom: 1px solid #30363d; }
+    .stats-inner { max-width: 1000px; margin: 0 auto; padding: 40px 20px; display: flex; justify-content: space-around; flex-wrap: wrap; gap: 20px; text-align: center; }
+    .stat-item h3 { font-size: 2rem; color: #58a6ff; font-weight: 700; }
+    .stat-item p { color: #8b949e; font-size: 0.9rem; margin-top: 4px; }
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(440px, 1fr)); gap: 20px; }
+    .project-card { background: #161b22; border: 1px solid #30363d; border-radius: 10px; padding: 26px; transition: border-color 0.2s, transform 0.2s; }
+    .project-card:hover { border-color: #58a6ff; transform: translateY(-2px); }
+    .project-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; }
+    .project-title { font-size: 1.05rem; font-weight: 700; color: #e6edf3; }
+    .project-date { font-size: 0.78rem; color: #8b949e; white-space: nowrap; margin-left: 10px; }
+    .project-assoc { font-size: 0.8rem; color: #58a6ff; margin-bottom: 12px; }
+    .project-desc { color: #8b949e; font-size: 0.88rem; line-height: 1.65; margin-bottom: 16px; }
+    .project-skills { display: flex; flex-wrap: wrap; gap: 7px; }
+    .skill-pill { background: #1f2937; border: 1px solid #388bfd40; color: #79c0ff; font-size: 0.75rem; padding: 3px 10px; border-radius: 12px; }
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; }
+    .skill-card { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 18px 20px; }
+    .skill-card h4 { color: #58a6ff; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 10px; }
+    .skill-card p { color: #8b949e; font-size: 0.88rem; line-height: 1.6; }
+    .contact-section { background: #161b22; border-top: 1px solid #30363d; text-align: center; padding: 60px 20px; }
+    .contact-section h2 { font-size: 1.6rem; color: #e6edf3; margin-bottom: 10px; }
+    .contact-section p { color: #8b949e; margin-bottom: 28px; }
+    .contact-links { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+    footer { background: #0d1117; text-align: center; padding: 24px; color: #484f58; font-size: 0.82rem; border-top: 1px solid #21262d; }
+    @media (max-width: 600px) { header h1 { font-size: 2rem; } .projects-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Ram K</h1>
+    <h2>Data Analyst &nbsp;|&nbsp; SQL &middot; Python &middot; Power BI &middot; Tableau</h2>
+    <p>I turn messy, siloed data into clean pipelines and dashboards that leadership actually uses. Based in Philadelphia &mdash; open to remote and hybrid roles.</p>
+    <div class="header-tags">
+      <span class="tag">SQL</span><span class="tag">Python (Pandas)</span><span class="tag">Power BI</span><span class="tag">Tableau</span><span class="tag">MS SQL Server</span><span class="tag">PostgreSQL</span><span class="tag">BigQuery</span><span class="tag">Excel</span>
+    </div>
+    <div class="cta-links">
+      <a href="https://www.linkedin.com/in/ramkoduru08/" target="_blank" class="btn btn-primary">LinkedIn Profile</a>
+      <a href="mailto:ramkoduru08@gmail.com" class="btn btn-secondary">ramkoduru08@gmail.com</a>
+    </div>
+  </header>
+  <div class="stats">
+    <div class="stats-inner">
+      <div class="stat-item"><h3>50%</h3><p>Reduction in manual data prep time</p></div>
+      <div class="stat-item"><h3>35%</h3><p>Improvement in data accuracy</p></div>
+      <div class="stat-item"><h3>$2M+</h3><p>Budget overruns surfaced via analytics</p></div>
+      <div class="stat-item"><h3>10+</h3><p>Executive dashboards delivered</p></div>
+      <div class="stat-item"><h3>3+ yrs</h3><p>Data analytics experience</p></div>
+    </div>
+  </div>
+  <section>
+    <h2 class="section-title">Projects</h2>
+    <p class="section-subtitle">5 end-to-end analytics projects spanning SQL pipelines, Python automation, BI dashboards, and data governance.</p>
+    <div class="projects-grid">
+      <div class="project-card">
+        <div class="project-header"><span class="project-title">Master's Capstone - Business Data Analysis &amp; Reporting</span><span class="project-date">Aug 2024 - Dec 2024</span></div>
+        <div class="project-assoc">Wilmington University</div>
+        <p class="project-desc">Analyzed real-world business datasets using MS SQL Server to extract, clean, and structure data for reporting. Built a comprehensive Excel reporting workbook featuring dynamic charts, conditional formatting, sparklines, and database functions to surface actionable business insights. Presented findings to faculty stakeholders through structured data storytelling, applying data validation and Agile collaboration practices throughout.</p>
+        <div class="project-skills"><span class="skill-pill">MS SQL Server</span><span class="skill-pill">Excel</span><span class="skill-pill">Data Validation</span><span class="skill-pill">Data Visualization</span><span class="skill-pill">Agile</span></div>
+      </div>
+      <div class="project-card">
+        <div class="project-header"><span class="project-title">E-Commerce Customer Segmentation &amp; Product Analytics</span><span class="project-date">Jun 2019 - Apr 2022</span></div>
+        <div class="project-assoc">Ram Krishi Infra Structures</div>
+        <p class="project-desc">Cleaned and analyzed 500K+ transactional e-commerce records using Python (Pandas) and MS SQL Server to uncover customer behavior patterns and purchase trends. Identified high-value customer segments based on transaction frequency and spend patterns to drive targeted product marketing strategy. Analyzed sales patterns and merchandising metrics to inform product positioning and marketing channel decisions.</p>
+        <div class="project-skills"><span class="skill-pill">Python</span><span class="skill-pill">Pandas</span><span class="skill-pill">SQL</span><span class="skill-pill">MS SQL Server</span><span class="skill-pill">Customer Analytics</span></div>
+      </div>
+      <div class="project-card">
+        <div class="project-header"><span class="project-title">Enterprise Cost Analytics &amp; Reporting Pipeline</span><span class="project-date">Jun 2019 - Apr 2022</span></div>
+        <div class="project-assoc">Ram Krishi Infra Structures</div>
+        <p class="project-desc">Designed an end-to-end data pipeline using MS SQL Server to extract and integrate data from disparate corporate sources. Applied data validation and governance frameworks to ensure data integrity, then surfaced $2M+ in addressable budget overrun opportunities via Tableau dashboards delivered to senior leadership. Served as the liaison between business units and IT to align reporting requirements end-to-end.</p>
+        <div class="project-skills"><span class="skill-pill">MS SQL Server</span><span class="skill-pill">Tableau</span><span class="skill-pill">Data Governance</span><span class="skill-pill">Data Validation</span><span class="skill-pill">Stakeholder Reporting</span></div>
+      </div>
+      <div class="project-card">
+        <div class="project-header"><span class="project-title">Equipment Performance &amp; Customer Behavior Analysis</span><span class="project-date">Jan 2019 - Jun 2019</span></div>
+        <div class="project-assoc">Jawaharlal Nehru Technological University</div>
+        <p class="project-desc">Analyzed equipment performance data using Python (Pandas) to identify failure patterns and maintenance cost trends across operational datasets. Conducted cohort and funnel analysis on a 500K-row e-commerce dataset using Python and SQL to uncover customer behavior patterns and high-value segment characteristics - findings used to inform product targeting and resource allocation decisions.</p>
+        <div class="project-skills"><span class="skill-pill">Python</span><span class="skill-pill">Pandas</span><span class="skill-pill">SQL</span><span class="skill-pill">Cohort Analysis</span><span class="skill-pill">Data Analysis</span></div>
+      </div>
+      <div class="project-card">
+        <div class="project-header"><span class="project-title">Construction Cost Analytics Dashboard</span><span class="project-date">Feb 2019 - May 2019</span></div>
+        <div class="project-assoc">Jawaharlal Nehru Technological University</div>
+        <p class="project-desc">Designed an end-to-end analytics pipeline across 5 years of construction cost data, surfacing budget overrun patterns by project type and region - quantified $2M+ in addressable cost exposure. Delivered a Tableau dashboard adopted as a program capstone showcase; modeled a 60% reduction in manual cost review time through automated visual reporting. Used Python and SQL to clean, structure, and analyze multi-source financial datasets.</p>
+        <div class="project-skills"><span class="skill-pill">Python</span><span class="skill-pill">SQL</span><span class="skill-pill">Tableau</span><span class="skill-pill">Financial Analytics</span><span class="skill-pill">Data Pipeline</span></div>
+      </div>
+    </div>
+  </section>
+  <section style="padding-top:0">
+    <h2 class="section-title">Skills &amp; Stack</h2>
+    <p class="section-subtitle">Tools and technologies I use to build analytics solutions from raw data to executive dashboards.</p>
+    <div class="skills-grid">
+      <div class="skill-card"><h4>Query &amp; Databases</h4><p>SQL, MS SQL Server, PostgreSQL, Google BigQuery</p></div>
+      <div class="skill-card"><h4>Programming</h4><p>Python (Pandas), Data Wrangling, Automation Scripts</p></div>
+      <div class="skill-card"><h4>BI &amp; Visualization</h4><p>Power BI (PL-300 Certified), Tableau (Desktop Specialist), Excel</p></div>
+      <div class="skill-card"><h4>Data Quality</h4><p>Data Validation, Data Governance, EDA, Data Cleaning</p></div>
+      <div class="skill-card"><h4>Reporting</h4><p>KPI Dashboards, Executive Reporting, Stakeholder Presentations</p></div>
+      <div class="skill-card"><h4>Certifications</h4><p>Power BI PL-300, Google Data Analytics, MS Information Systems (GPA 3.7)</p></div>
+    </div>
+  </section>
+  <div class="contact-section">
+    <h2>Open to New Opportunities</h2>
+    <p>Looking for Data Analyst, BI Analyst, or Analytics Engineer roles - remote or hybrid, Philadelphia-based.</p>
+    <div class="contact-links">
+      <a href="https://www.linkedin.com/in/ramkoduru08/" target="_blank" class="btn btn-primary">View LinkedIn Profile</a>
+      <a href="mailto:ramkoduru08@gmail.com" class="btn btn-secondary">ramkoduru08@gmail.com</a>
+      <a href="https://github.com/ramkoduru08" target="_blank" class="btn btn-secondary">GitHub Profile</a>
+    </div>
+  </div>
+  <footer><p>Ram K - Data Analyst | Philadelphia, PA | Built with GitHub Pages</p></footer>
+</body>
+</html>
